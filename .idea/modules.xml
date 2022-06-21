@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/BringBackChatEdit.iml" filepath="$PROJECT_DIR$/.idea/BringBackChatEdit.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Main/Main.iml" filepath="$PROJECT_DIR$/Main/Main.iml" />
     </modules>
   </component>
 </project>
