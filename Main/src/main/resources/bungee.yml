@@ -1,4 +1,4 @@
 name: BringBackChatEdit
 author: Xayanix
 version: 1.0
-main: pl.xayanix.bbce.bungee.BringBackChatEdit
+main: pl.xayanix.bbce.bungee.BungeeBringBackChatEdit
