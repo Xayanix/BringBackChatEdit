@@ -4,6 +4,7 @@ import net.md_5.bungee.api.connection.ProxiedPlayer;
 import net.md_5.bungee.api.event.ChatEvent;
 import net.md_5.bungee.api.plugin.Listener;
 import net.md_5.bungee.event.EventHandler;
+import net.md_5.bungee.event.EventPriority;
 
 import java.io.ByteArrayOutputStream;
 import java.io.DataOutputStream;
@@ -13,7 +14,7 @@ import java.io.DataOutputStream;
 */
 public class ChatListener implements Listener {
 
-    @EventHandler(priority = (byte) 999)
+    @EventHandler(priority = EventPriority.HIGHEST)
     public void onChat(ChatEvent event){
         if(event.isCommand() || event.isCancelled() || event.isProxyCommand()) return;
 
