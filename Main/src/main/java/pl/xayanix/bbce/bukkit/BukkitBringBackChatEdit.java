@@ -22,7 +22,7 @@ public class BukkitBringBackChatEdit extends JavaPlugin implements PluginMessage
 
 
     public void onPluginMessageReceived(String s, Player player, byte[] bytes) {
-        if(s.equalsIgnoreCase("nscore:chatsign")){
+        if(s.equalsIgnoreCase("bbce:chatsign")){
             ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(bytes);
             byteArrayInputStream.skip(2);
             try {
