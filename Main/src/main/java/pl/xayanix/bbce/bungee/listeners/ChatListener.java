@@ -8,6 +8,7 @@ import net.md_5.bungee.event.EventPriority;
 
 import java.io.ByteArrayOutputStream;
 import java.io.DataOutputStream;
+import java.io.IOException;
 
 /*
     created by: Xayanix at 2022-06-21 12:23
@@ -15,7 +16,7 @@ import java.io.DataOutputStream;
 public class ChatListener implements Listener {
 
     @EventHandler(priority = EventPriority.HIGHEST)
-    public void onChat(ChatEvent event){
+    public void onChat(ChatEvent event) throws IOException {
         if(event.isCommand() || event.isCancelled() || event.isProxyCommand()) return;
 
         ProxiedPlayer player = (ProxiedPlayer) event.getSender();
@@ -24,12 +25,11 @@ public class ChatListener implements Listener {
 
         event.setCancelled(true);
         ByteArrayOutputStream b = new ByteArrayOutputStream();
-        DataOutputStream out = new DataOutputStream(b);
-        try {
+        try (DataOutputStream out = new DataOutputStream(b)) {
             out.writeUTF(event.getMessage());
             player.getServer().sendData("bbce:chatsign", b.toByteArray());
         } catch (Exception e) {
-
+            e.printStackTrace();
         }
 
     }
